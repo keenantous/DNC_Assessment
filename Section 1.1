@@ -1,0 +1,11 @@
+SELECT 
+    gift_date,
+    COUNT(DISTINCT donor_id) as unique_donors,
+    COUNT(*) as total_donations,
+    SUM(gift_amount) as revenue
+FROM 
+    `custom-oasis-396520.DNC_Assessment.Donation_Base_Table`
+GROUP BY 
+    gift_date
+ORDER BY 
+    gift_date;
